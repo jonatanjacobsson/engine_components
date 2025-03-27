@@ -62,7 +62,7 @@ export class IDSSpecification implements IDSSpecificationData {
     for (const facet of this.applicability) {
       await facet.getEntities(model, entities);
     }
-    console.log(`IDSSpecification test running at ${new Date().toISOString()} - CUSTOM BUILD`);    // Test all requirements instead of just the first one
+    
     for (const requirement of this.requirements) {
       const requirementResults = await requirement.test(entities, model);
       result = [...result, ...requirementResults];
